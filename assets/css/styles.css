@@ -11,8 +11,8 @@ table.stats-table {
 
 tr.table-header {
   text-align: left;
-  color: var(--bs-primary);
-  background-color: var(--bs-gray-400);
+  background-color: var(--bs-primary);
+  color: var(--bs-secondary);
 }
 
 tr.table-row {
