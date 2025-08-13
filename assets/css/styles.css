@@ -23,18 +23,19 @@ tr.table-row {
 td.table-cell {
   color: var(--bs-primary);
   background-color: white;
-  padding-left: .4rem;
-  padding-right: .8rem;
-  padding-top: .8rem;
-  padding-bottom: .4rem;
+  padding-left: .2rem;
+  padding-right: .4rem;
+  padding-top: .4rem;
+  padding-bottom: .2rem;
   border-left: 0px;
   border-right: 0px;
   text-align: left;
 }
 
 th.table-header-cell {
+  text-align: center;
   padding-left: .4rem;
-  padding-right: .8rem;
+  padding-right: .4rem;
   padding-top: .4rem;
   padding-bottom: .4rem;
 }
