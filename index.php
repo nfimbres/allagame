@@ -20,6 +20,9 @@ switch($page) {
     case 'players':
         include 'pages/players.php';
         break;
+    case 'player':
+        include 'pages/player.php';
+        break;
     case 'teams':
         include 'pages/teams.php';
         break;
