@@ -74,7 +74,7 @@
                         if (!file_exists($imgFullPath)) {
                             $imgPath = "/../assets/img/players/default.png";
                         }
-                        echo "<td class='table-cell' style='width:2.25rem; min-width:2.25rem;'><a href='?page=player&player=" . urlencode($playerId) . "'><img src='" . htmlspecialchars($imgPath) . "' alt='Player' style='height:2.25rem;width:2.25rem;object-fit:cover;border-radius:10px;'></a></td>";
+                        echo "<td class='table-cell' style='width:2.25rem; min-width:2.25rem;'><a href='?page=player&player=" . urlencode($playerId) . "'><img src='" . htmlspecialchars($imgPath) . "' alt='Player' style='height:2.25rem;width:2.25rem;object-fit:cover;border-radius:2.25rem;'></a></td>";
                         foreach ($row as $key => $cell) {
                             if ($key === 'Player ID') continue;
                             if ($key === 'Player Name') {
