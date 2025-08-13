@@ -54,7 +54,7 @@
 
                 // Display table
                 if (!empty($data)) {
-                    echo "<table class='stats-table'>";
+                    echo "<div class='responsive-table-wrapper'><table class='stats-table'>";
                     // Table header
                     echo "<thead><tr class='table-header'>";
                     echo "<th class='table-header-cell' colspan='2'>Player</th>";
@@ -85,7 +85,7 @@
                         }
                         echo "</tr>";
                     }
-                    echo "</tbody></table>";
+                    echo "</tbody></table></div>";
                 }
 
                 // Build base query string without p

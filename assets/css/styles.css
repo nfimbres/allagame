@@ -1,3 +1,13 @@
+/* Responsive table wrapper for mobile screens */
+.responsive-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.responsive-table-wrapper table {
+  min-width: 600px;
+  width: 100%;
+}
 .container {
   justify-content: center;
 }
