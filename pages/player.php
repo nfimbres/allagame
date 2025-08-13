@@ -9,10 +9,22 @@
 
             if ($player !== null) {
                 // New SQL query to get player info
-                $sql = "SELECT fullName AS `Player` FROM players WHERE playerId = '" . $player . "'";
+                $sql = "SELECT fullName AS `Player`, playerId AS `Player ID` FROM players WHERE playerId = '" . $player . "'";
                 $result = $conn->query($sql);
                 if ($result && $row = $result->fetch_assoc()) {
                     echo "<h1 style=\"padding-bottom: 10px;font-family: 'Roboto Condensed';color: var(--bs-primary);\">" . htmlspecialchars($row['Player']) . "</h1>";
+                    
+                    $playerId = $row['Player ID'];
+                    $imgPath = "/../assets/img/players/{$playerId}.png";
+                    $imgFullPath = __DIR__ . "/../assets/img/players/{$playerId}.png";
+                    if (!file_exists($imgFullPath)) {
+                        $imgPath = "/../assets/img/players/default.png";
+                    }
+                    echo "<td class='table-cell' style='width:2.25rem; min-width:2.25rem;'>
+                        <a href='?page=player&player=" . urlencode($playerId) . "'>
+                            <img src='" . htmlspecialchars($imgPath) . "' alt='Player' style='height:2.25rem;width:2.25rem;object-fit:cover;border-radius:10px;'>
+                        </a>
+                    </td>";
                 }
             }
             
