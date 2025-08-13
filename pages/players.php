@@ -5,7 +5,7 @@
             <container>
                 <?php
 
-                require_once 'assets/php/db-connection.php';
+                require_once '/private_html/db-connection.php';
 
                 $sql =
                     "SELECT
