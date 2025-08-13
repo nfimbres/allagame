@@ -1,0 +1,40 @@
+.container {
+  justify-content: center;
+}
+
+table.nba-table {
+  font-family: 'Roboto Condensed';
+  width: 1000px;
+  font-size: .875rem;
+  width: 80%;
+}
+
+tr.nba-header {
+  text-align: left;
+  background-color: var(--bs-gray-400);
+  color: var(--bs-gray-800);
+}
+
+tr.nba-row {
+  background-color: white;
+  border-bottom: 2px solid var(--bs-gray-200);
+}
+
+td.nba-cell {
+  background-color: white;
+  padding-left: .4rem;
+  padding-right: .8rem;
+  padding-top: .8rem;
+  padding-bottom: .4rem;
+  border-left: 0px;
+  border-right: 0px;
+  text-align: left;
+}
+
+th.nba-header-cell {
+  background-color: var(--bs-gray-400);
+  padding-left: .4rem;
+  padding-right: .8rem;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+}
