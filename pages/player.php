@@ -21,6 +21,8 @@
                 if ($result && $row = $result->fetch_assoc()) {
                     echo "<h1 style=\"padding-bottom: 10px;font-family: 'Roboto Condensed';color: var(--bs-primary);\">" . htmlspecialchars($row['Player']) . "</h1>";
                 }
+            } else {
+                echo "<h1 style=\"padding-bottom: 10px;font-family: 'Roboto Condensed';color: var(--bs-primary);\">Player Not Found</h1>";
             }
             
             ?>
