@@ -5,7 +5,7 @@
 
             $player = isset($_GET['player']) ? htmlspecialchars($_GET['player']) : null;
 
-            if ($player != null) {
+            if ($player !== null) {
                 echo "<h1 style='padding-bottom: 10px;font-family: \'Roboto Condensed\';color: var(--bs-primary);'>Player: " . $player . "</h1>";
             }
             
