@@ -5,10 +5,22 @@
 
             $player = isset($_GET['player']) ? htmlspecialchars($_GET['player']) : null;
 
+            // Ensure $conn is defined and is a valid MySQLi connection
+            if (!isset($conn) || !$conn instanceof mysqli) {
+                // Replace with your actual connection parameters
+                $conn = new mysqli('localhost', 'username', 'password', 'database_name');
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+            }
+
             if ($player !== null) {
                 // New SQL query to get player info
                 $sql = "SELECT playerId AS `Player ID`, fullName AS `Player Name`, height AS `Ht`, weight AS `Wt`, (CASE WHEN draftPick is NULL OR draftPick = '' THEN 'Undrafted' WHEN draftYear IS NULL OR draftYear = '' THEN 'Undrafted' WHEN draftRound IS NULL OR draftRound = '' THEN 'Undrafted' WHEN draftRound = 'Undrafted' THEN 'Undrafted' ELSE CONCAT(draftYear, ': ', draftPick) END) AS `Draft` FROM players WHERE playerId = ?";
                 $stmt = $conn->prepare($sql);
+                if ($stmt === false) {
+                    die("Prepare failed: " . $conn->error);
+                }
                 $stmt->bind_param('s', $player);
                 $stmt->execute();
                 $result = $stmt->get_result();
