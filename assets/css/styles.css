@@ -33,7 +33,6 @@ td.table-cell {
 }
 
 th.table-header-cell {
-  color: var(--bs-primary);
   padding-left: .4rem;
   padding-right: .8rem;
   padding-top: .4rem;
