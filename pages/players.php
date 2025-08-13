@@ -58,7 +58,7 @@
                             if ($key === 'Player Name') {
                                 // Link player name to player page
                                 $playerId = $row['Player ID'];
-                                echo "<td class='nba-cell'><a href='?page=player&player=" . urlencode($playerId) . "'>" . htmlspecialchars($cell) . "</a></td>";
+                                echo "<td class='nba-cell'><a href='?page=player&player=" . urlencode($playerId) . "' class='table-link'>" . htmlspecialchars($cell) . "</a></td>";
                             } else {
                                 echo "<td class='nba-cell'>" . htmlspecialchars($cell) . "</td>";
                             }
