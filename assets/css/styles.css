@@ -12,7 +12,7 @@ table.stats-table {
 tr.table-header {
   text-align: left;
   color: var(--bs-primary);
-  color: var(--bs-secondary);
+  background-color: var(--bs-gray-400);
 }
 
 tr.table-row {
