@@ -16,25 +16,10 @@
 
             if ($player !== null) {
                 // New SQL query to get player info
-                $sql = "SELECT playerId AS `Player ID`, fullName AS `Player Name`, height AS `Ht`, weight AS `Wt`, (CASE WHEN draftPick is NULL OR draftPick = '' THEN 'Undrafted' WHEN draftYear IS NULL OR draftYear = '' THEN 'Undrafted' WHEN draftRound IS NULL OR draftRound = '' THEN 'Undrafted' WHEN draftRound = 'Undrafted' THEN 'Undrafted' ELSE CONCAT(draftYear, ': ', draftPick) END) AS `Draft` FROM players WHERE playerId = ?";
-                $stmt = $conn->prepare($sql);
-                if ($stmt === false) {
-                    die("Prepare failed: " . $conn->error);
-                }
-                $stmt->bind_param('s', $player);
-                $stmt->execute();
-                $result = $stmt->get_result();
-                $row = $result->fetch_assoc();
-                if ($row) {
-                    echo "<h1 style=\"padding-bottom: 10px;font-family: 'Roboto Condensed';color: var(--bs-primary);\">Player ID: " . $row['Player ID'] . "</h1>";
-                    echo "<h2 style=\"font-family: 'Roboto Condensed';color: var(--bs-secondary);\">" . htmlspecialchars($row['Player Name']) . "</h2>";
-                    $playerId = $row['Player ID'];
-                    $imgPath = "/../assets/img/players/{$playerId}.png";
-                    $imgFullPath = __DIR__ . "/../assets/img/players/{$playerId}.png";
-                    if (!file_exists($imgFullPath)) {
-                        $imgPath = "/../assets/img/players/default.png";
-                    }
-                    echo "<img src='{$imgPath}' alt='Player Image' style='max-width:200px;max-height:200px;margin-bottom:20px;'>";
+                $sql = "SELECT fullName AS `Player` FROM players WHERE playerId = '" . $player . "'";
+                $result = $conn->query($sql);
+                if ($result && $row = $result->fetch_assoc()) {
+                    echo "<h1 style=\"padding-bottom: 10px;font-family: 'Roboto Condensed';color: var(--bs-primary);\">" . htmlspecialchars($row['Player']) . "</h1>";
                 }
             }
             
