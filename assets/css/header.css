@@ -1,0 +1,102 @@
+header {
+  background-color: var(--bs-primary);
+  height: 8rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.header-logo {
+  height: 100%;
+  width: auto;
+  padding: 1%;
+}
+
+.header-h1 {
+  color: var(--bs-secondary);
+  font-family: 'Roboto Condensed';
+  font-weight: bold;
+  font-size: 300%;
+}
+
+.header-nav {
+  font-family: 'Roboto Condensed';
+  color: var(--bs-secondary);
+  width: 100%;
+  border: none;
+}
+
+.header-nav-item {
+  background-color: var(--bs-primary);
+  border: 0px;
+}
+
+.header-nav-link {
+  color: var(--bs-secondary);
+  background-color: var(--bs-primary);
+  text-align: center;
+}
+
+a.nav-link {
+  font-size: 200%;
+  margin-right: 3%;
+}
+
+a.nav-link:hover {
+  color: white;
+}
+
+@media (max-width: 991px) {
+  a.nav-link {
+    display: none;
+  }
+}
+
+@media (max-width: 415px) {
+  .header-h1 {
+    font-size: 200%;
+  }
+}
+
+.nav-button {
+  display: block;
+  padding-right: 5%;
+}
+
+@media (min-width: 992px) {
+  .nav-button {
+    display: none;
+  }
+}
+
+.nav-button #myLinks {
+  display: none;
+}
+
+.nav-button a {
+  font-family: 'Roboto Condensed';
+  background-color: var(--bs-primary);
+  color: var(--bs-secondary);
+  text-decoration: none;
+  font-size: 150%;
+  display: block;
+  width: 100px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.nav-button a.icon {
+  display: block;
+}
+
+i.nav-button {
+  font-size: 250%;
+}
+
+.nav-button-bar {
+  display: block;
+  width: 35px;
+  height: 1px;
+  margin-top: 10px;
+}
+
