@@ -5,7 +5,7 @@
             <container>
                 <?php
 
-                require_once '/../../private_html/db-connection.php';
+                include __DIR__ . '/../../private_html/db-connection.php';
 
                 $sql =
                     "SELECT
