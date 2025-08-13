@@ -9,6 +9,7 @@
 
                 $sql =
                     "SELECT
+                playerId AS `Player ID`,
                 fullName AS `Player Name`,
                 height AS `Ht`,
                 weight AS `Wt`,
@@ -43,15 +44,24 @@
                     echo "<table class='nba-table'>";
                     // Table header
                     echo "<thead><tr class='nba-header'>";
+                    // Hide 'Player ID' column
                     foreach (array_keys($data[0]) as $col) {
+                        if ($col === 'Player ID') continue;
                         echo "<th class='nba-header-cell'>" . htmlspecialchars($col) . "</th>";
                     }
                     echo "</tr></thead><tbody>";
                     // Table rows
                     foreach ($data as $row) {
                         echo "<tr class='nba-row'>";
-                        foreach ($row as $cell) {
-                            echo "<td class='nba-cell'>" . htmlspecialchars($cell) . "</td>";
+                        foreach ($row as $key => $cell) {
+                            if ($key === 'Player ID') continue;
+                            if ($key === 'Player Name') {
+                                // Link player name to player page
+                                $playerId = $row['Player ID'];
+                                echo "<td class='nba-cell'><a href='?page=player&player=" . urlencode($playerId) . "'>" . htmlspecialchars($cell) . "</a></td>";
+                            } else {
+                                echo "<td class='nba-cell'>" . htmlspecialchars($cell) . "</td>";
+                            }
                         }
                         echo "</tr>";
                     }
