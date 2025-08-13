@@ -41,26 +41,26 @@
 
                 // Display table
                 if (!empty($data)) {
-                    echo "<table class='nba-table'>";
+                    echo "<table class='stats-table'>";
                     // Table header
-                    echo "<thead><tr class='nba-header'>";
+                    echo "<thead><tr class='table-header'>";
                     // Hide 'Player ID' column
                     foreach (array_keys($data[0]) as $col) {
                         if ($col === 'Player ID') continue;
-                        echo "<th class='nba-header-cell'>" . htmlspecialchars($col) . "</th>";
+                        echo "<th class='table-header-cell'>" . htmlspecialchars($col) . "</th>";
                     }
                     echo "</tr></thead><tbody>";
                     // Table rows
                     foreach ($data as $row) {
-                        echo "<tr class='nba-row'>";
+                        echo "<tr class='table-row'>";
                         foreach ($row as $key => $cell) {
                             if ($key === 'Player ID') continue;
                             if ($key === 'Player Name') {
                                 // Link player name to player page
                                 $playerId = $row['Player ID'];
-                                echo "<td class='nba-cell'><a href='?page=player&player=" . urlencode($playerId) . "' class='table-link'>" . htmlspecialchars($cell) . "</a></td>";
+                                echo "<td class='table-cell'><a href='?page=player&player=" . urlencode($playerId) . "' class='table-link'>" . htmlspecialchars($cell) . "</a></td>";
                             } else {
-                                echo "<td class='nba-cell'>" . htmlspecialchars($cell) . "</td>";
+                                echo "<td class='table-cell'>" . htmlspecialchars($cell) . "</td>";
                             }
                         }
                         echo "</tr>";
