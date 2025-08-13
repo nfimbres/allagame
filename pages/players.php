@@ -57,7 +57,8 @@
                     echo "<div class='responsive-table-wrapper'><table class='stats-table'>";
                     // Table header
                     echo "<thead><tr class='table-header'>";
-                    echo "<th class='table-header-cell' colspan='2'>Player</th>";
+                    echo "<th class='table-header-cell'></th>";
+                    echo "<th class='table-header-cell'>Player</th>";
                     foreach (array_keys($data[0]) as $col) {
                         if ($col === 'Player ID' || $col === 'Player Name') continue;
                         echo "<th class='table-header-cell'>" . htmlspecialchars($col) . "</th>";

@@ -43,11 +43,7 @@ td.table-cell {
 }
 
 th.table-header-cell {
-  text-align: center;
-  padding-left: .4rem;
-  padding-right: .4rem;
-  padding-top: .4rem;
-  padding-bottom: .4rem;
+  padding: .4rem;
 }
 
 a.table-link:link,
