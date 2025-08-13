@@ -22,7 +22,7 @@
                 END) AS `Draft`
                 FROM players
                 WHERE 1
-                ORDER BY draftPick ASC, draftYear ASC
+                ORDER BY draftPick ASC, draftYear ASC, lastName ASC, firstName ASC
                 ";
 
                 $result = $conn->query($sql);
