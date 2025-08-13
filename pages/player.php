@@ -5,14 +5,7 @@
 
             $player = isset($_GET['player']) ? htmlspecialchars($_GET['player']) : null;
 
-            // Ensure $conn is defined and is a valid MySQLi connection
-            if (!isset($conn) || !$conn instanceof mysqli) {
-                // Replace with your actual connection parameters
-                $conn = new mysqli('localhost', 'username', 'password', 'database_name');
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
-            }
+            include __DIR__ . '/../../private_html/db-connection.php';
 
             if ($player !== null) {
                 // New SQL query to get player info
@@ -21,8 +14,6 @@
                 if ($result && $row = $result->fetch_assoc()) {
                     echo "<h1 style=\"padding-bottom: 10px;font-family: 'Roboto Condensed';color: var(--bs-primary);\">" . htmlspecialchars($row['Player']) . "</h1>";
                 }
-            } else {
-                echo "<h1 style=\"padding-bottom: 10px;font-family: 'Roboto Condensed';color: var(--bs-primary);\">Player Not Found</h1>";
             }
             
             ?>
