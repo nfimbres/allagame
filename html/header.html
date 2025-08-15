@@ -1,0 +1,107 @@
+<header>
+    <img class="header" src="assets/img/aag-logo.png">
+    <h1 class="header-title">All A Game</h1>
+    <div style="width: 100%;padding-right: 1rem;">
+        <nav class="horz">
+            <a class="nav-horz-link" href="?page=home">Home</a>
+            <a class="nav-horz-link" href="?page=stats">Stats</a>
+            <a class="nav-horz-link" href="?page=players">Players</a>
+            <a class="nav-horz-link" href="?page=teams">Teams</a>
+            <a class="nav-horz-link" href="?page=aboutus">About Us</a>
+        </nav>
+    </div>
+</header>
+<nav class="vert">
+    <a class="nav-vert-link" href="?page=home">Home</a>
+    <a class="nav-vert-link" href="?page=stats">Stats</a>
+    <a class="nav-vert-link" href="?page=players">Players</a>
+    <a class="nav-vert-link" href="?page=teams">Teams</a>
+    <a class="nav-vert-link" href="?page=aboutus">About Us</a>
+</nav>
+
+<style>
+img.header {
+  height: 100%;
+  width: auto;
+  padding: 0.25rem;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--primary);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4rem;
+}
+
+.header-title {
+  color: var(--secondary);
+  font-family: 'Roboto Condensed';
+  font-weight: bold;
+  font-size: 3rem;
+  white-space: nowrap;
+  margin: 0px;
+}
+
+nav.horz {
+  font-family: 'Roboto Condensed';
+  color: var(--bs-secondary);
+  width: 100%;
+  border: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav.vert {
+  margin-top: 4rem;
+  font-family: 'Roboto Condensed';
+  width: 100%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  font-size: 0.75rem;
+  align-items: center;
+}
+
+@media (min-width: 600px) {
+  nav.vert {
+    display: none;
+  }
+}
+
+@media (max-width: 599px) {
+  a.nav-horz-link {
+    display: none;
+  }
+}
+
+a.nav-horz-link {
+  color: var(--secondary);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+a.nav-vert-link {
+  color: var(--primary);
+  white-space: nowrap;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid var(--bs-gray-200);
+}
+
+a.nav-horz-link:hover {
+  color: white;
+}
+
+a.nav-vert-link:hover {
+  color: white;
+}
+</style>
