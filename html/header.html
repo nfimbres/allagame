@@ -1,6 +1,6 @@
 <header>
     <img class="header" src="assets/img/aag-logo.png">
-    <h1 class="header-title">All A Game</h1>
+    <h1 class="header-title"><a href="?page=home">All A Game</a></h1>
     <div style="width: 100%;padding-right: 1rem;">
         <nav class="horz">
             <a class="nav-horz-link" href="?page=home">Home</a>
@@ -21,7 +21,7 @@
 
 <style>
 img.header {
-  height: 100%;
+  height: 80%;
   width: auto;
   padding: 0.25rem;
 }
@@ -102,6 +102,26 @@ a.nav-horz-link:hover {
 }
 
 a.nav-vert-link:hover {
+  color: white;
+}
+
+a.nav-vert-link:visited {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a.nav-horz-link:visited {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
   color: white;
 }
 </style>

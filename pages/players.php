@@ -48,19 +48,19 @@ if (empty($result) || !$result->num_rows) {
 echo "<input type='text' id='playerSearch' placeholder='Search players...' style='margin-bottom:1rem; width:60%; font-size:1rem; padding:0.5rem; font-family: Roboto Condensed;'>";
 
 if (!empty($data)) {
-    echo "<div class='responsive-table-wrapper'><table class='stats-table' id='playersTable'>";
+    echo "<div><table id='playersTable'>";
     // Table header
     echo "<thead><tr class='table-header'>";
-    echo "<th class='table-header-cell'></th>";
-    echo "<th class='table-header-cell'>Player</th>";
+    echo "<th></th>";
+    echo "<th>Player</th>";
     foreach (array_keys($data[0]) as $col) {
         if ($col === 'Player ID' || $col === 'Player Name') continue;
-        echo "<th class='table-header-cell'>" . htmlspecialchars($col) . "</th>";
+        echo "<th>" . htmlspecialchars($col) . "</th>";
     }
     echo "</tr></thead><tbody>";
     // Table rows
     foreach ($data as $row) {
-        echo "<tr class='table-row'>";
+        echo "<tr>";
         // Image column
         $playerId = $row['Player ID'];
         $imgPath = "/../assets/img/players/{$playerId}.png";
@@ -68,14 +68,14 @@ if (!empty($data)) {
         if (!file_exists($imgFullPath)) {
             $imgPath = "/../assets/img/players/default.png";
         }
-        echo "<td class='table-cell' style='width:2.25rem; min-width:2.25rem;'><a href='?page=player&player=" . urlencode($playerId) . "'><img src='" . htmlspecialchars($imgPath) . "' alt='Player' style='height:2.25rem;width:2.25rem;object-fit:cover;border-radius:2.25rem;'></a></td>";
+        echo "<td style='width:2.25rem; min-width:2.25rem;'><a href='?page=player&player=" . urlencode($playerId) . "'><img src='" . htmlspecialchars($imgPath) . "' alt='Player' style='height:2.25rem;width:2.25rem;object-fit:cover;border-radius:2.25rem;'></a></td>";
         foreach ($row as $key => $cell) {
             if ($key === 'Player ID') continue;
             if ($key === 'Player Name') {
                 // Link player name to player page
-                echo "<td class='table-cell' style='width:40%; min-width:120px;'><a href='?page=player&player=" . urlencode($playerId) . "' class='table-link'>" . htmlspecialchars($cell) . "</a></td>";
+                echo "<td style='width:40%; min-width:120px;'><a href='?page=player&player=" . urlencode($playerId) . "' class='table-link'>" . htmlspecialchars($cell) . "</a></td>";
             } else {
-                echo "<td class='table-cell' style='width:20%; min-width:80px;'>" . htmlspecialchars($cell) . "</td>";
+                echo "<td style='width:20%; min-width:80px;'>" . htmlspecialchars($cell) . "</td>";
             }
         }
         echo "</tr>";
@@ -115,7 +115,7 @@ document.getElementById('playerSearch').addEventListener('input', function() {
 
 ?>
 <style>
-    table.stats-table {
+    table {
         font-family: 'Roboto Condensed';
         width: 1000px;
         font-size: .875rem;
@@ -129,12 +129,12 @@ document.getElementById('playerSearch').addEventListener('input', function() {
         color: var(--secondary);
     }
 
-    tr.table-row {
+    tr {
         background-color: white;
         border-bottom: 2px solid var(--gray-200);
     }
 
-    td.table-cell {
+    td {
         color: var(--primary);
         background-color: white;
         padding-left: .2rem;
@@ -148,7 +148,7 @@ document.getElementById('playerSearch').addEventListener('input', function() {
         width: fit-content;
     }
 
-    th.table-header-cell {
+    th {
         padding: .4rem;
     }
 
