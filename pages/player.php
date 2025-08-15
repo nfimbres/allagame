@@ -77,5 +77,6 @@ if ($player !== null) {
         width: auto rem;
         margin: 1rem;
         margin-bottom: 0;
+        /* background-image: url('/../assets/img/players/default.png'); */
     }
 </style>
