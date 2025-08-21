@@ -102,7 +102,7 @@ if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $data[] = $row;
     }
-    echo "<div class='table-background'><h2>Per Game Stats</h2><table id='playerStatsTable'>";
+    echo "<div class='table-background'><h2>Per Game</h2><table id='playerStatsTable'>";
     // Table header
     echo "<thead><tr>";
     $skipCols = ['Player ID', 'Team ID', 'Team Abr', 'Team'];
@@ -164,7 +164,7 @@ if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $data[] = $row;
     }
-    echo "<div class='table-background'><h2>Per 75 Possessions Stats</h2><table id='playerStatsTable'>";
+    echo "<div class='table-background'><h2>Per 75 Possessions</h2><table id='playerStatsTable'>";
     // Table header
     echo "<thead><tr>";
     $skipCols = ['Player ID', 'Team ID', 'Team Abr', 'Team'];
